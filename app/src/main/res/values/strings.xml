@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ForHealth</string>
+    <string name="title_home">我的目标</string>
+    <string name="title_dashboard">每日管理</string>
+    <string name="title_tending">健康趋势</string>
+    <string name="title_notifications">个人中心</string>
+    <string name="title_anim">我的体重目标</string>
+    <string name="dairy_management" >最近体重为</string>
+    <string name="hint_exercise" >请输入您的运动</string>
+    <string name="hint_weight" >请输入您的体重</string>
+    <string name="date_aim" >开始时间</string>
+</resources>

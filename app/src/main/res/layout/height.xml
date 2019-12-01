@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/height_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.aigestudio.wheelpicker.WheelPicker
+        android:id="@+id/height_picker"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        app:wheel_curtain_color="@color/background"
+        app:wheel_indicator="true"
+        app:wheel_indicator_color="@color/background"
+        app:wheel_selected_item_text_color="@color/colorPrimary"
+        app:wheel_visible_item_count="5" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="CM"
+        android:textColor="@color/colorPrimary"/>
+
+</LinearLayout>

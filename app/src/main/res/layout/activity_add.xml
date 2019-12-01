@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id = "@+id/cancel"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="15dp"
+            android:background="@mipmap/cuo"/>
+
+        <TextView
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            style="@style/TextViewStyle"
+            android:textSize="25sp"
+            android:text="今日管理"
+            android:gravity="center"/>
+
+        <Button
+            android:id = "@+id/save"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="15dp"
+            android:background="@mipmap/dui"/>
+
+    </LinearLayout>
+
+<RadioGroup
+    android:id = "@+id/weather"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@android:color/white">
+
+    <RadioButton
+        android:id = "@+id/sunny"
+        android:layout_margin="5dp"
+        android:button="@null"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/sunny"
+        android:drawablePadding="5dp"
+        android:text="晴"
+        android:textSize="20sp"
+        android:gravity="center"
+        style="@style/TextViewStyle"/>
+
+    <RadioButton
+        android:id = "@+id/cloudy"
+        android:layout_margin="5dp"
+        android:button="@null"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/duoyun"
+        android:drawablePadding="5dp"
+        android:text="阴"
+        android:textSize="20sp"
+        android:gravity="center"
+        style="@style/TextViewStyle"/>
+
+    <RadioButton
+        android:id = "@+id/rainy"
+        android:layout_margin="5dp"
+        android:button="@null"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/yu"
+        android:drawablePadding="5dp"
+        android:text="雨"
+        android:textSize="20sp"
+        android:gravity="center"
+        style="@style/TextViewStyle"/>
+
+    <RadioButton
+        android:id = "@+id/snowy"
+        android:layout_margin="5dp"
+        android:button="@null"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/xue"
+        android:drawablePadding="5dp"
+        android:text="雪"
+        android:textSize="20sp"
+        android:gravity="center"
+        style="@style/TextViewStyle"/>
+</RadioGroup>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+
+        <EditText
+            android:id = "@+id/exercise"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_exercise"
+            style="@style/TextViewStyle"
+            android:textSize="20sp"
+            android:background = "@null"
+            android:textCursorDrawable="@null"/>
+        <View
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@color/text"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:text="今日体重"
+                style="@style/TextViewStyle"
+                android:textSize="20sp"/>
+
+            <EditText
+                android:id = "@+id/today_weight"
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:hint="@string/hint_weight"
+                style="@style/TextViewStyle"
+                android:textSize="20sp"
+                android:background="@null"
+                android:textCursorDrawable="@null"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:layout_height="wrap_content"
+                android:hint=" kg"
+                style="@style/TextViewStyle"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@color/text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <EditText
+            android:id = "@+id/feeling"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="感觉怎样"
+            style="@style/TextViewStyle"
+            android:textSize="20sp"
+            android:background = "@null"
+            android:textCursorDrawable="@null"/>
+
+        <View
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@color/text"/>
+
+        <EditText
+            android:id = "@+id/remarks"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="备注"
+            style="@style/TextViewStyle"
+            android:textSize="20sp"
+            android:background = "@null"
+            android:textCursorDrawable="@null"/>
+
+        <View
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@color/text"/>
+
+    </LinearLayout>
+
+</LinearLayout>
