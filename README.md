@@ -20,7 +20,7 @@ dependencies{
 ```
 # 各界面主要代码
 ## 一、登录界面（LandingActivity）
-图片模糊效果
+### 图片模糊效果
 在activity中重写onWindowFocusChanged()方法
 ```java
  public void onWindowFocusChanged(boolean hasFocus){
@@ -36,7 +36,64 @@ dependencies{
         }
     }
 ```
+## 二、主界面（MainActivity）
+### 底部导航栏 BottomNavigationView
+1.在res文件夹下的menu新建navigation.xml菜单
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_dashboard" />
+
+    <item
+        android:id="@+id/navigation_tending"
+        android:icon="@drawable/qushi"
+        android:title = "@string/title_tending" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_notifications" />
+
+</menu>
+```
+2.设置监听
+```java  private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    mViewPager.setCurrentItem(0);
+                    return true;
+                case R.id.navigation_dashboard:
+                    mViewPager.setCurrentItem(1);
+                    return true;
+                case R.id.navigation_tending:
+                    mViewPager.setCurrentItem(2);
+                    return true;
+                case R.id.navigation_notifications:
+                    mViewPager.setCurrentItem(3);
+                    return true;
+            }
+            return false;
+        }
+    };
+```
+```java
+   bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+   bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+```
+3.绑定Viewpager
 
 # Screenshot
 ![登录界面](https://github.com/jishicheng/ForHealth/blob/master/Screenshot1.jpg)
