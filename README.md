@@ -66,7 +66,8 @@ dependencies{
 </menu>
 ```
 2.设置监听
-```java  private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+```java  
+private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
@@ -94,7 +95,14 @@ dependencies{
    bottomNavigationView.setSelectedItemId(R.id.navigation_home);
 ```
 3.绑定Viewpager
-
+MainActivity继承ViewPager.OnPageChangeListener，并重写onPageSelected（）方法
+```java
+    @Override
+    public void onPageSelected(int i) {
+        menuItem = bottomNavigationView.getMenu().getItem(i);
+        menuItem.setChecked(true);
+    }
+```
 # Screenshot
 ![登录界面](https://github.com/jishicheng/ForHealth/blob/master/Screenshot1.jpg)
 ![功能界面1](https://github.com/jishicheng/ForHealth/blob/master/Screenshot2.jpg)
