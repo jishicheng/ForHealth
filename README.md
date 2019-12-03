@@ -2,6 +2,11 @@
 ## ForHealth
 一个用于记录每日体重的健康日志，可显示体重趋势及健康指数，让您更好地管理自己。<br>
 A Health log for daily weight.The more disciplined, The more free.
+# 功能介绍
+## 1.记录个人信息及目标体重
+## 2.记录每天体重及当日信息
+## 3.显示体重趋势
+## 4.分析身体健康情况（BMI值）
 # 需要导入的第三方库
 在app下的build.gradle下添加dependenices
 ```java
