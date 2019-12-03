@@ -1,6 +1,6 @@
 # 简介
 ## ForHealth
-一个用于记录每日体重的健康日志，可显示体重趋势及健康指数，让您更好地管理自己。
+一个用于记录每日体重的健康日志，可显示体重趋势及健康指数，让您更好地管理自己。<br>
 A Health log for daily weight.The more disciplined, The more free.
 # 需要导入的第三方库
 在app下的build.gradle下添加dependenices
@@ -103,6 +103,42 @@ MainActivity继承ViewPager.OnPageChangeListener，并重写onPageSelected（）
         menuItem = bottomNavigationView.getMenu().getItem(i);
         menuItem.setChecked(true);
     }
+```
+# 三、体重趋势界面（TendingFragment）
+## 折线图（LineChart）
+1.添加第三方库
+```java
+dependiences{
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha' // android图表控件
+}
+```
+2.在布局文件中加入LineChart控件
+```java
+  <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"/>
+```
+3.初始化表格
+```java
+List<Entry> entries = new ArrayList<>();
+//填充数据
+        for (int i = 0;i<mdairy.size();i++) {
+            entries.add(new Entry(i, (float) Double.parseDouble(mdairy.get(i).today_weight)));
+        }
+//设置X轴为字符串类型
+String[] str = new String[mdairy.size()];
+        for(int i = 0;i<mdairy.size();i++){
+            str[i] = mdairy.get(i).getDate().split("-",2)[1];
+        }
+     
+        XAxis xAxis = chart.getXAxis();
+        XAxisValueFormatter labelFormatter = new XAxisValueFormatter(str);
+        xAxis.setValueFormatter(labelFormatter);
+//导入数据 
+        LineDataSet lineDataSet = new LineDataSet(entries, "体重");
+        LineData data = new LineData(lineDataSet);
+        chart.setData(data);
 ```
 # Screenshot
 ![登录界面](https://github.com/jishicheng/ForHealth/blob/master/Screenshot1.jpg)
